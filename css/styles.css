@@ -42,12 +42,14 @@ img {
 
 .page-header {
   background-color: var(--white-color);
+  border: 1px solid #ececec;
 }
 
 .border {
   border: 1px solid #ececec;
 }
 .section {
+  padding-top: 94px;
   padding-bottom: 94px;
 }
 
@@ -64,7 +66,7 @@ img {
   align-items: center;
 }
 
-.header-list {
+.site-nav {
   display: flex;
 }
 
@@ -90,7 +92,6 @@ img {
   color: var(--blue);
 }
 
-/* ------------Hero--------------- */
 .logo {
   text-transform: capitalize;
   font-family: "Raleway", sans-serif;
@@ -99,7 +100,7 @@ img {
   color: var(--primery-text-color);
   text-decoration: none;
   letter-spacing: 0.03em;
-  padding-right: 92px;
+  margin-right: 92px;
 }
 
 .link {
@@ -116,10 +117,6 @@ img {
   color: var(--blue);
 }
 
-.list {
-  align-items: center;
-}
-
 .contacts {
   color: var(--grey);
   font-weight: 500;
@@ -133,10 +130,22 @@ img {
 .contacts:focus {
   color: var(--blue);
 }
-
-.contacts-tel {
-  padding-left: 50px;
+.contacts:hover .contacts-icon,
+.contacts:focus .contacts-icon {
+  fill: var(--blue);
 }
+
+.contacts-icon {
+  margin-right: 10px;
+  fill: var(--grey);
+  align-items: center;
+}
+
+.contacts-link {
+  margin-right: 30px;
+}
+
+/* ------------Hero--------------- */
 
 .hero {
   text-align: center;
@@ -191,6 +200,8 @@ img {
 .button:focus {
   background-color: var(--blue);
   color: var(--white-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .button-hero {
@@ -207,9 +218,26 @@ img {
   border-radius: 4px;
 }
 
-.section-text {
-  display: flex;
+.list-text:not(:last-child) {
+  margin-right: 30px;
 }
+
+.card-link {
+  width: 270px;
+  height: 120px;
+  border-radius: 4px;
+  background-color: #f5f4fa;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.features {
+  padding-bottom: 0;
+}
+
 .section-subtitle {
   font-weight: 700;
   font-size: 14px;
@@ -228,6 +256,8 @@ img {
   line-height: 1.16em;
   letter-spacing: 0.03em;
   text-align: center;
+  margin-bottom: 50px;
+  padding-top: 0;
 }
 .profession-photo {
   border-radius: 0px 0px 4px 4px;
@@ -235,7 +265,6 @@ img {
   text-align: center;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
 }
 
 .profession {
@@ -262,10 +291,41 @@ img {
 .social-link {
   width: 44px;
   height: 44px;
-  background-color: aqua;
+  background-color: var(--white-color);
   border-radius: 50%;
   display: block;
-  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--blue);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: var(--white-color);
+}
+
+.social-icon {
+  fill: #afb1b8;
+}
+
+.href-client-link:hover,
+.href-client-link:focus {
+  border: 1px solid var(--blue);
+  background-color: var(--white-color);
+}
+
+.href-client-link:hover .client-icon,
+.href-client-link:focus .client-icon {
+  fill: var(--blue);
+}
+
+.href-client-link {
+  fill: #afb1b8;
 }
 
 .heading-photo {
@@ -285,8 +345,44 @@ img {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.875em;
-  padding-top: 94px;
+  display: flex;
 }
+
+.section-client {
+  background-color: var(--white-color);
+}
+
+.sc-client {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16em;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.client-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.href-client-link {
+  cursor: pointer;
+  width: 170px;
+  height: 92px;
+  background-color: var(--white-color);
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client:last-child {
+  margin-right: 0;
+}
+
 .address {
   font-weight: 400;
   font-size: 14px;
@@ -305,13 +401,16 @@ img {
   background-color: var(--bg-ylight-gra);
 }
 
+.wrapper {
+  padding: 30px 0;
+}
+
 .photo {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18em;
   letter-spacing: 0.03em;
-  padding-bottom: 10px;
-  padding-top: 30px;
+  margin-bottom: 10px;
 }
 
 .logo-footer {
@@ -334,23 +433,60 @@ img {
 
 .footer {
   background-color: var(--dark-grey);
+  padding: 60px 0;
 }
 
-.footer-container {
+.footer-link {
   display: flex;
-}
-
-.footer-tel {
-  margin-bottom: 60px;
 }
 
 .footer-mil {
   margin-bottom: 9px;
 }
 
-.footer-log {
-  padding-top: 60px;
-  padding-bottom: 20px;
+.address {
+  margin-top: 20px;
+  margin-right: 70px;
+}
+
+.ft-social-link {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ft-social-link:hover,
+.ft-social-link:focus {
+  background-color: var(--blue);
+}
+
+.footer-social-icon {
+  fill: var(--white-color);
+}
+
+.social-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social {
+  width: 206px;
+  height: 80px;
 }
 
 /*-----------portfolio---------*/
@@ -365,20 +501,26 @@ img {
   display: flex;
   align-items: center;
   list-style: none;
-  margin: 50px;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
-.button-mr {
+.button-mr:not(:last-child) {
   margin-right: 30px;
 }
 
 .project {
-  flex-basis: calc((100% - 30px * 4) / 3);
+  flex-basis: calc((100% - 30px * 3) / 3);
   margin-left: 30px;
   margin-top: 30px;
   background: var(--white-color);
   border: 1px solid #eeeeee;
-  box-sizing: border-box;
+}
+
+.project:hover,
+.project:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-list {
@@ -392,9 +534,9 @@ img {
   font-weight: 700;
   font-size: 18px;
   line-height: 2em;
-  margin: 20px 24px 4px 24px;
+  margin-bottom: 4px;
 }
 
-.text {
-  margin: 0px 24px 20px 24px;
+.wrapper-text {
+  padding: 20px 24px 20px 24px;
 }
